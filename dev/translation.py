@@ -3,15 +3,14 @@
 #source article (left) is in
 import math
 import deepl
-from googletrans import Translator
 from nltk.tokenize import sent_tokenize
 from textwrap import wrap
 
 #here is the auth_key which connects to deepl allowing us to be able to translate
 #google_trans helps with the language codes
-auth_key = "a00fba37-dc41-db89-61f3-f739098b1700:fx" #"0ff6b0ef-fc20-631e-6feb-695b9d666743:fx" 
+auth_key = "0ff6b0ef-fc20-631e-6feb-695b9d666743:fx" #this is specifically valentin/grey-box api key- it is a free key that allows 500k chars translated a month
+#whoever takes over- discuss with valentin best option- either paid version of deepl, or another translation api
 deepl_trans = deepl.Translator(auth_key)
-google_trans = Translator()
 
 # allows deepl to translate the target article
 # Contributor: Joe LaBianca, Raj JaGroup
@@ -93,5 +92,4 @@ def translate(code, target):
                     result = result + str(resultFragment)
                     i += 1
         return result
-    
-    #if this line is hit, return the popup that we will have to auto translate
+    #if this line is hit, return the popup that user will have to manually translate
